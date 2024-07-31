@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0NTJMWH0TW1"></script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0NTJMWH0TW1');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775716454044">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>NovelAI | SillyTavern 中文文档</title>
+    <meta name="title" content="NovelAI | SillyTavern 中文文档">
+    <meta name="description" content="NovelAI是一项付费订阅服务，允许用户无限制地每月访问其高质量的内部文本生成、图像生成和文本转语音模型。在此注册账户以开始使用： https://novelai.net/">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/novelai/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/api-connections/novelai/">
+    <meta property="og:title" content="NovelAI | SillyTavern 中文文档">
+    <meta property="og:description" content="NovelAI是一项付费订阅服务，允许用户无限制地每月访问其高质量的内部文本生成、图像生成和文本转语音模型。在此注册账户以开始使用： https://novelai.net/">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/novel-side.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/novelai/">
+    <meta property="twitter:title" content="NovelAI | SillyTavern 中文文档">
+    <meta property="twitter:description" content="NovelAI是一项付费订阅服务，允许用户无限制地每月访问其高质量的内部文本生成、图像生成和文本转语音模型。在此注册账户以开始使用： https://novelai.net/">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/novel-side.png">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.5.0.775716454044" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775716454044" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775716454044" data-turbo-eval="false" defer></script>
+
+    <Style>
+        a {
+            color: brown !important;
+        }
+
+        .dark a {
+            color: rgb(223, 151, 18) !important;
+        }
+
+        body {
+            font-family: Noto Sans;
+        }
+    </Style>
+    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern 中文文档</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="novelai" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#novelai">#</doc-anchor-trigger>
+        <span>NovelAI</span>
+    </h1>
+</doc-anchor-target>
+<p>NovelAI是一项付费订阅服务，允许用户无限制地每月访问其高质量的内部文本生成、图像生成和文本转语音模型。在此注册账户以开始使用：<a href="https://novelai.net/">https://novelai.net/</a></p>
+<p>您将仅获得<em>50次生成</em>的免费体验，以评估该模型。当出现**“不符合该模型的资格”**错误时，这意味着您已用尽试用期，需要订阅付费计划。</p>
+<doc-anchor-target id="api-密钥">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-密钥">#</doc-anchor-trigger>
+        <span>API 密钥</span>
+    </h2>
+</doc-anchor-target>
+<p>要获取您的 NovelAI API 密钥，请按照以下步骤操作：</p>
+<ol>
+<li><p>选择左侧边栏顶部的齿轮图标。
+<figure class="content-center">
+    <img src="../../../static/novel-side.png" alt="Left Sidebar">
+    <figcaption class="caption">Left Sidebar</figcaption>
+</figure>
+</p>
+</li>
+<li><p>在“用户设置”下选择“账户”。
+<figure class="content-center">
+    <img src="../../../static/novel-user.png" alt="User Settings">
+    <figcaption class="caption">User Settings</figcaption>
+</figure>
+</p>
+</li>
+<li><p>选择“获取持久 API 令牌”。
+<figure class="content-center">
+    <img src="../../../static/novel-account.png" alt="Account">
+    <figcaption class="caption">Account</figcaption>
+</figure>
+</p>
+</li>
+<li><p>选择复制图标，将您的 NovelAI API 令牌复制到剪贴板。
+<figure class="content-center">
+    <img src="../../../static/novel-token.png" alt="Persistent API Token">
+    <figcaption class="caption">Persistent API Token</figcaption>
+</figure>
+</p>
+</li>
+</ol>
+<doc-anchor-target id="模型">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#模型">#</doc-anchor-trigger>
+        <span>模型</span>
+    </h2>
+</doc-anchor-target>
+<p>您应该使用 Kayra。</p>
+<p>Clio 不是一个糟糕的模型，但不如 Kayra 强大。Clio 的速度优势微不足道。在 NovelAI 的平板和卷轴层级中，Clio 确实具有比 Kayra 更大的上下文大小，但与 Kayra 提供的更好的连贯性/文笔质量相比，这种权衡不太可能是值得的。</p>
+<doc-anchor-target id="设置">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#设置">#</doc-anchor-trigger>
+        <span>设置</span>
+    </h2>
+</doc-anchor-target>
+<p>设置文件位于此处 (<code v-pre>SillyTavern/data/&lt;user-handle&gt;/NovelAI Settings</code>)。
+您也可以手动添加自己的设置文件。</p>
+<doc-anchor-target id="响应长度">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#响应长度">#</doc-anchor-trigger>
+        <span>响应长度</span>
+    </h3>
+</doc-anchor-target>
+<p>您希望每条消息生成多少文本。请注意，NovelAI 每个响应的限制为 150 个标记。</p>
+<doc-anchor-target id="上下文大小">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#上下文大小">#</doc-anchor-trigger>
+        <span>上下文大小</span>
+    </h3>
+</doc-anchor-target>
+<p>聊天中在任何给定时间保留多少个令牌。您可以使用的最大上下文大小取决于模型和您的订阅级别：</p>
+<ul>
+<li>Kayra (Tablet) - 3072 tokens</li>
+<li>Kayra (Scroll) - 6144 tokens</li>
+<li>Kayra (Opus) 和 Clio (所有级别) - 8192 tokens</li>
+</ul>
+<doc-anchor-target id="前言">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#前言">#</doc-anchor-trigger>
+        <span>前言</span>
+    </h3>
+</doc-anchor-target>
+<p>插入在聊天顶部以修改写作风格的文本。推荐格式是一个简短标签的列表，例如 &quot;[ 风格: 聊天, 详细, 感官 ]&quot;。</p>
+<doc-anchor-target id="预设描述">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#预设描述">#</doc-anchor-trigger>
+        <span>预设描述</span>
+    </h2>
+</doc-anchor-target>
+<p>根据 Novel AI 的说法，默认预设的用途如下。</p>
+<doc-anchor-target id="kayra">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kayra">#</doc-anchor-trigger>
+        <span>Kayra</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Asper - 适合创意写作。期待意想不到的转折。</li>
+<li>Blended-Coffee - (CFG) 新鲜咖啡与一些CFG混合在一起。</li>
+<li>Blook - (CFG) 倾向于简单、简洁但多样的语言。</li>
+<li>Carefree - 一款优秀的全能型工具</li>
+<li>CosmicCube - (CFG) 一个稳固、合理的基线。根据偏好调整随机性。</li>
+<li>Fresh-Coffee - 保持事情在正轨上。很好地处理指令。</li>
+<li>Green-Active-Writer - (CFG) 类似于Writer&#x27;s Daemon，但具有高CFG。</li>
+<li>PilotFish - (CFG) 专为丰富背景的创意写作而设计。</li>
+<li>Pro_Writer - 模仿畅销小说的节奏和感觉。</li>
+<li>Stelenes - 更可能选择合理的替代方案。重试时具有多样性。</li>
+<li>Tea_Time - 一旦开始就变得精彩。</li>
+<li>Tesseract - (CFG) 维持风格和质量。</li>
+<li>Writers-Daemon - 极具想象力，有时甚至过于丰富。</li>
+</ul>
+<doc-anchor-target id="clio">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#clio">#</doc-anchor-trigger>
+        <span>Clio</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Edgewise - 处理多种生成风格表现良好</li>
+<li>Fresh Coffee - 保持事情的进展。</li>
+<li>Long-Press - 旨在创造性散文。</li>
+<li>Talker Chat - 设计用于聊天风格生成。</li>
+<li>Vingt-Un - 一个优秀的全能默认选项，倾向于散文。</li>
+</ul>
+<doc-anchor-target id="使用novelai与sillytavern的提示和常见问题解答">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#使用novelai与sillytavern的提示和常见问题解答">#</doc-anchor-trigger>
+        <span>使用NovelAI与SillyTavern的提示和常见问题解答</span>
+    </h2>
+</doc-anchor-target>
+<p>在从其他ST后端API切换到NovelAI时，常常会出现许多常见问题和疑问。区别在于模型的训练目标。您很可能使用过OpenAI或Anthropic模型（或类似的本地模型），这些模型是围绕遵循用户指令构建的。NovelAI的模型则完全围绕文本补全构建：NAI的模型试图继续输入的提示，而不是将您的输入视为消息并形成响应。由于这种差异，许多适用于其他API的提示和常识在NAI中可能无法使用。</p>
+<doc-anchor-target id="调整-novelai-的设置">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#调整-novelai-的设置">#</doc-anchor-trigger>
+        <span>调整 NovelAI 的设置</span>
+    </h3>
+</doc-anchor-target>
+<p>在高级格式设置（A 图标）下：</p>
+<ul>
+<li>将“上下文模板”设置为“NovelAI”</li>
+<li>将“分词器”设置为“最佳匹配”</li>
+<li>勾选“始终将角色名称添加到提示中”</li>
+<li>勾选“折叠连续换行”</li>
+<li>取消勾选“指令模式”下的“启用”框</li>
+</ul>
+<p>在用户设置（带齿轮的人物）下：</p>
+<ul>
+<li>开启“滑动”（虽然不是 NAI 特有的，但非常实用，建议开启）</li>
+</ul>
+<doc-anchor-target id="为novelai构建调整角色卡">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#为novelai构建调整角色卡">#</doc-anchor-trigger>
+        <span>为NovelAI构建/调整角色卡</span>
+    </h3>
+</doc-anchor-target>
+<p>为了优化您的角色卡以适应NovelAI，有几种推荐的方法来撰写角色描述：散文和属性。</p>
+<p>散文非常简单，甚至让人觉得这应该不起作用：“Sylpheed是一个看起来年轻但实际上已经900岁的女神。她身材矮小，纤细，长长的白发在她编辫子的侧马尾中渐变成绿色，翡翠绿的眼睛呈十字形。[...]” 不，真的，仅此而已。只需用正常的句子写出角色的外貌、行为等，AI就会捕捉到这些信息。</p>
+<p>如果您不相信自己的写作能力，或者想要一种更结构化的方法，可以使用属性方法，这在NovelAI的训练数据中存在。这种方法作为简单的角色特征列表，适用于不同类型。以下是一些经过测试与NovelAI模型有效的可能属性列表：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Name:
+AKA:
+Type: character
+Setting:
+Nationality:
+Species:
+Gender:
+Age:
+Height:
+Weight:
+Appearance:
+Clothing:
+Attire:
+Personality:
+Mind:
+Mental:
+Likes:
+Dislikes:
+Sexuality:
+Speech:
+Voice:
+Abilities:
+Skills:
+Quote:
+Affiliation:
+Occupation:
+Reputation:
+Secret:
+Family:
+Allies:
+Enemies:
+Background:
+Description:
+Attributes:</code></pre>
+</doc-codeblock></div>
+<p>“Type: character”是为了告诉AI这是在描述一个角色（而不是地点、物体或其他类型的事物）。其余的属性是可选的，有些是多余的（例如，Personality、Mind和Mental基本上意味着相同的东西），但这些经过测试，与NovelAI的模型效果良好。填写与您的角色相关的属性即可。属性应以小写字母书写，并用逗号分隔，无需在单词周围加引号。例如：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Skills: lockpicking, stealth, running away very fast</code></pre>
+</doc-codeblock></div>
+<p>这些方法被推荐是因为它们在NovelAI的训练数据中存在，因此特别适用于该模型。</p>
+<doc-anchor-target id="示例卡片">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#示例卡片">#</doc-anchor-trigger>
+        <span>示例卡片</span>
+    </h4>
+</doc-anchor-target>
+<p>以下是为NovelAI制作的几张示例卡片，展示了为NovelAI创建卡片的不同方式。第一张卡片Valka使用属性方法进行角色描述，而第二张卡片Eris则使用散文描述，并包含大量示例对话。</p>
+<div style="display:flex;gap:2em;justify-content:center">
+<p><figure class="content-center">
+    <a href="../../../static/valka.png">
+        <img src="../../../static/valka.png" alt="Valka">
+    </a>
+    <figcaption class="caption">Valka</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <a href="../../../static/eris.png">
+        <img src="../../../static/eris.png" alt="Eris">
+    </a>
+    <figcaption class="caption">Eris</figcaption>
+</figure>
+</p>
+</div>
+<doc-anchor-target id="不要做的事情">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#不要做的事情">#</doc-anchor-trigger>
+        <span>不要做的事情</span>
+    </h4>
+</doc-anchor-target>
+<p>大多数现有的角色卡格式与NovelAI不太匹配。它们会给您一些结果，甚至一些不错的结果，但存在很多问题。W++是最大的罪魁祸首之一，它与NovelAI模型的训练内容毫无相似之处，并且它不断使用括号/大括号/引号消耗了大量的tokens，导致卡片的大小膨胀而没有实际好处。</p>
+<p>在那些没有集成到NovelAI中的现有格式中，AliChat是最有可能有效的，因为它依赖于使用示例消息同时传达角色信息和他们的声音，以您希望AI输出的消息类型格式。</p>
+<p>对于大多数其他格式，由于它们通常是列出特定角色的不同特征的方法，因此可以相对简单地转换为属性方法。</p>
+<doc-anchor-target id="我应该使用哪个模块">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#我应该使用哪个模块">#</doc-anchor-trigger>
+        <span>我应该使用哪个模块？</span>
+    </h3>
+</doc-anchor-target>
+<p>可能不需要模块。如果你想让角色以更华丽的方式说话，Prose Augmenter 很有用，但要小心不要过度使用。Text Adventure 可能适合用于文本冒险风格的卡片/故事。</p>
+<doc-anchor-target id="不是指令模块">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#不是指令模块">#</doc-anchor-trigger>
+        <span>不是指令模块？</span>
+    </h3>
+</doc-anchor-target>
+<p>您可以在需要时调用指令模块。在您的消息中创建一个换行，并将您的指令放在大括号中，如下所示：<code v-pre>{ CharName is offended by that seemingly innocuous statement }</code>（文本与括号之间的空格是_必需_的）。这样做将自动将AI切换到指令模块一段时间。您不想一直使用指令模块，因为它往往会产生比其他模块更少的创造性输出，仅在您需要强烈引导AI朝特定方向时使用。</p>
+<doc-anchor-target id="为什么我的回复总是被截断">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#为什么我的回复总是被截断">#</doc-anchor-trigger>
+        <span>为什么我的回复总是被截断？</span>
+    </h3>
+</doc-anchor-target>
+<p>NovelAI 将响应长度限制为 ~150 个标记，即使您将滑块设置得更高。当达到滑块中的标记数或 150 时，以较低者为准，它会生成最多 20 个额外标记，以寻找停止序列或句子的结束，因此响应的有效限制为 170 个标记，此时它将停止，从而导致被截断。</p>
+<p>如果被截断，您可以选择继续选项（在文本框左侧的三行菜单中）以让角色继续他们的回复。</p>
+<p>如果您经常希望获得超过 170 个标记的回复，您可以通过以下方式绕过限制：</p>
+<ul>
+<li>将响应长度保持在 150 个标记。</li>
+<li>在高级格式设置中，启用自动继续。</li>
+<li>将“目标长度”设置为所需长度。</li>
+</ul>
+<p>这将将多个生成连接在一起，以便您获得更长的消息，但并不能保证回复会达到所需长度的 100%，如果模型决定停止。</p>
+<doc-anchor-target id="如何让机器人写更长的回复">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何让机器人写更长的回复">#</doc-anchor-trigger>
+        <span>如何让机器人写更长的回复？</span>
+    </h3>
+</doc-anchor-target>
+<p>阅读上面的内容，了解回复被截断的原因。这将有助于确保回复不会因达到生成长度限制而提前被截断。</p>
+<p>如果您的回复没有被截断但仍然太短，很可能是因为“垃圾进，垃圾出”——如果您给模型提供了不好的示例，它将产生不好的输出。如果角色卡没有示例对话或示例对话很短，并且您发送给机器人的消息也很短，模型会注意到这一点，并将其视为接受的方式，因此回复会很短。因此，请编写更长的示例对话和更长的消息给机器人。（您可以始终使用 NovelAI 为您编写一些示例对话，而不是自己动手。）</p>
+<doc-anchor-target id="如何让机器人停止为我发言">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何让机器人停止为我发言">#</doc-anchor-trigger>
+        <span>如何让机器人停止为我发言？</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>检查角色卡的第一条消息和示例对话中是否包含角色为您采取行动的内容 - 如果有，请重写它们以消除角色为您行动的情况</li>
+<li>确保已勾选“始终将角色名称添加到提示中”</li>
+<li>确保您当前使用的用户角色与聊天的其余部分相同。如果您更改了用户角色但没有切换回来（或者没有将角色锁定到该聊天），那么通常停止为您生成内容的规则将失效</li>
+<li>将 [&quot;\n{{user}}:&quot;] 添加到自定义停止字符串（通常不需要，但有时有帮助）</li>
+</ul>
+<doc-anchor-target id="为什么我的角色没有回应">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#为什么我的角色没有回应">#</doc-anchor-trigger>
+        <span>为什么我的角色没有回应？</span>
+    </h3>
+</doc-anchor-target>
+<p>有很多原因可能导致这种情况，因此我们需要查看几个地方：</p>
+<ul>
+<li>确保在高级格式中选中了“始终将角色名称添加到提示”</li>
+<li>检查是否有来自API的错误。虽然您可以在NAI免费试用期间使用SillyTavern，但一旦试用结束，您将只会收到错误</li>
+<li>检查您在“自定义停止字符串”中设置的内容 - 如果这些内容在响应开始时被生成，可能会导致响应提前中断</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">code block content</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="如何使用作者注释">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何使用作者注释">#</doc-anchor-trigger>
+        <span>如何使用作者注释？</span>
+    </h3>
+</doc-anchor-target>
+<p>一般来说，你可能不应该使用它。它插入在上下文的末尾附近，而在NAI的模型中，它常常会压倒上下文中的其他内容。它主要是旧的、较弱模型的遗留物，那时更为必要。</p>
+<doc-anchor-target id="如何进行场景切换时间跳跃">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何进行场景切换时间跳跃">#</doc-anchor-trigger>
+        <span>如何进行场景切换/时间跳跃？</span>
+    </h3>
+</doc-anchor-target>
+<p>将以下内容作为系统消息或在下一个消息的开始处换行：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">***
+[ 2 天后 ]</code></pre>
+</doc-codeblock></div>
+<p>然后将其余消息放在下一行。括号中的文本可以是时间跳跃、新地点或其他任何内容。“***”（幽默地称为“dinkus”）告诉 AI 场景已经改变，而括号中的文本则提供了更多上下文。</p>
+<doc-anchor-target id="ai不断重复特定单词短语我该怎么办">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ai不断重复特定单词短语我该怎么办">#</doc-anchor-trigger>
+        <span>AI不断重复特定单词/短语，我该怎么办？</span>
+    </h3>
+</doc-anchor-target>
+<p>如上所述，您可以将重复惩罚滑块稍微调高一些，但调得过高可能会导致输出不连贯。<br />
+要更彻底地解决这个问题，请回顾上下文，尤其是最近的消息，并删除重复的单词/短语。从上下文中移除它可以减少AI开始重复它的理由。</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/API Connections/novelai.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/mancer/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Mancer</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/scale/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Scale</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "NovelAI", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

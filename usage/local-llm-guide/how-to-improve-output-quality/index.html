@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0NTJMWH0TW1"></script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0NTJMWH0TW1');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775716454044">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>如何提高输出质量 | SillyTavern 中文文档</title>
+    <meta name="title" content="如何提高输出质量 | SillyTavern 中文文档">
+    <meta name="description" content="所以你和机器人聊天，感觉效果不太好。也许是模型不佳。也许你无法运行更好的模型，这已经是最好的了。但也许你可以修复它。">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/local-llm-guide/how-to-improve-output-quality/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/local-llm-guide/how-to-improve-output-quality/">
+    <meta property="og:title" content="如何提高输出质量 | SillyTavern 中文文档">
+    <meta property="og:description" content="所以你和机器人聊天，感觉效果不太好。也许是模型不佳。也许你无法运行更好的模型，这已经是最好的了。但也许你可以修复它。">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/local-llm-guide/how-to-improve-output-quality/">
+    <meta property="twitter:title" content="如何提高输出质量 | SillyTavern 中文文档">
+    <meta property="twitter:description" content="所以你和机器人聊天，感觉效果不太好。也许是模型不佳。也许你无法运行更好的模型，这已经是最好的了。但也许你可以修复它。">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.5.0.775716454044" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.775716454044" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.775716454044" data-turbo-eval="false" defer></script>
+
+    <Style>
+        a {
+            color: brown !important;
+        }
+
+        .dark a {
+            color: rgb(223, 151, 18) !important;
+        }
+
+        body {
+            font-family: Noto Sans;
+        }
+    </Style>
+    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern 中文文档</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="如何提高输出质量" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何提高输出质量">#</doc-anchor-trigger>
+        <span>如何提高输出质量</span>
+    </h1>
+</doc-anchor-target>
+<p>所以你和机器人聊天，感觉效果不太好。也许是模型不佳。也许你无法运行更好的模型，这已经是最好的了。但也许你可以修复它。</p>
+<doc-anchor-target id="检查您是否可以运行更高级的变体">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#检查您是否可以运行更高级的变体">#</doc-anchor-trigger>
+        <span>检查您是否可以运行更高级的变体</span>
+    </h2>
+</doc-anchor-target>
+<p>这应该是常识。我们在指南中使用了一个7B模型，但如果您的硬件可以处理更大的模型，您应该使用像13B这样的更大模型，这样您将获得更好的输出。在撰写本文时，我无法找到openhermes-2.5-mistral的13B或更高变体，但这个建议适用于许多其他模型，它们有多种尺寸。</p>
+<p>此外，只要您有足够的RAM/VRAM容量来运行更高的量化（例如q5或q8而不是q4），那么这也会产生更好的结果。</p>
+<doc-anchor-target id="调整sillytavern的指令提示">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#调整sillytavern的指令提示">#</doc-anchor-trigger>
+        <span>调整SillyTavern的指令提示</span>
+    </h2>
+</doc-anchor-target>
+<p>与LLM对话没有单一的方法：不同的模型被训练以响应不同的请求方式（例如“在这个角色扮演聊天中写回复”）。在像GPT4这样的高级云模型上，模型非常强大，可以理解以任何自然语言方式表达的许多隐含上下文。</p>
+<p>在您的消费硬件上运行的LLM则没有那么出色。当您按照模型期望的方式进行提示时，它们的输出会有所改善。这是基于模型创建者的训练方式，这被称为“指令风格”，即您如何指示模型为您执行任务。</p>
+<p>SillyTavern附带了一些指令模板（告诉SillyTavern如何与模型交流的配置方案），但您可能需要创建自定义模板，以使SillyTavern能够正确指示。如果只是为了将默认系统提示更改为更接近您想要的内容。在我的经验中，只有ChatML模板不需要我在ST中进行调整。大多数模型在SillyTavern提示不当时，生成良好输出的能力远不如OpenHermes-2.5-Mistral-7B，因此它们受益于这种定制。</p>
+<p>您的目标是让SillyTavern遵循指令风格。要理解发生了什么，我们需要知道三件事：</p>
+<ol>
+<li>模型期望什么样的指令风格？</li>
+<li>SillyTavern是否使用了正确的指令风格？</li>
+<li>如果没有，我们如何在ST中创建一个更正确的指令风格？</li>
+</ol>
+<doc-anchor-target id="初步准备">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#初步准备">#</doc-anchor-trigger>
+        <span>初步准备</span>
+    </h3>
+</doc-anchor-target>
+<p>在 ST 中，我们将创建一个简单的角色，名为 Betty，描述为“Betty 是一名刚毕业的商业管理专业学生。”，第一条消息为“嗨，我是 Betty。我来面试吗？”。请继续创建这个角色，我们将在本指南中使用它。</p>
+<p>此外，我们还需要一个需要定制以便良好运作的模型。在本指南中，我们将使用 <a href="https://huggingface.co/TheBloke/Starling-LM-7B-alpha-GGUF">TheBloke/Starling-LM-7B-alpha-GGUF</a> 作为我们的示例。这是另一个高评价的模型。</p>
+<doc-anchor-target id="1-模型期望什么样的指令风格">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-模型期望什么样的指令风格">#</doc-anchor-trigger>
+        <span>1. 模型期望什么样的指令风格？</span>
+    </h3>
+</doc-anchor-target>
+<p>Starling 的页面上写道：“我们的模型遵循与 Openchat 3.5 完全相同的聊天模板和用法。有关更多详细信息，请参阅他们的模型卡。” OpenChat 3.5 的页面在“对话模板（点击展开）”下表示，进行多轮（即聊天）的方法是：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none"># Multi-turn
+tokens = tokenizer(&quot;GPT4 Correct User: Hello&lt;|end_of_turn|&gt;GPT4 Correct Assistant: Hi&lt;|end_of_turn|&gt;GPT4 Correct User: How are you today?&lt;|end_of_turn|&gt;GPT4 Correct Assistant:&quot;).input_ids
+assert tokens == [1, 420, 6316, 28781, 3198, 3123, 1247, 28747, 22557, 32000, 420, 6316, 28781, 3198, 3123, 21631, 28747, 15359, 32000, 420, 6316, 28781, 3198, 3123, 1247, 28747, 1602, 460, 368, 3154, 28804, 32000, 420, 6316, 28781, 3198, 3123, 21631, 28747]</code></pre>
+</doc-codeblock></div>
+<p>如果我们忽略 Python 代码，并添加一些换行符，我们可以看到它期望接收的是：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">GPT4 Correct User: Hello&lt;|end_of_turn|&gt;
+GPT4 Correct Assistant: Hi&lt;|end_of_turn|&gt;
+GPT4 Correct User: How are you today?&lt;|end_of_turn|&gt;
+GPT4 Correct Assistant:</code></pre>
+</doc-codeblock></div>
+<p>所以现在我们知道如何正确地提示它。</p>
+<doc-anchor-target id="2-sillytavern-是否使用了正确的指令风格">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-sillytavern-是否使用了正确的指令风格">#</doc-anchor-trigger>
+        <span>2. SillyTavern 是否使用了正确的指令风格？</span>
+    </h3>
+</doc-anchor-target>
+<p>SillyTavern 与 LLM 的交互在 AI Response Formatting 窗口中配置（顶部的第 3 个按钮）。主要有两个部分：上下文模板和指令模式。这两部分都有一些针对流行模型系列的预设。</p>
+<p>（旁注：当 Ooba 在 Ooba 中加载 Starling 时，它说这是 Alpaca 指令风格。这是错误的，我们知道模型创建者/微调者说这是 OpenChat 3.5 风格。在利用模型时，不应信任 Ooba。只有在对模型几乎没有信息时，才遵循它的建议，这样总比没有好。）</p>
+<p>让我们从简单的开始。将 SillyTavern 配置为使用上下文模板 = 默认，指令模式 = OpenOrca-OpenChat。OpenOrca-OpenChat 是 SillyTavern 最接近 OpenChat 的选项，对吧？所以这是你自然的起点。</p>
+<p>与 Betty 开始一个新聊天，并发送“没错，进来吧。”你会立即看到回复是多么糟糕。以下是我得到的内容：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Betty: 嗨，我是 Betty。我来面试吗？我被告知要在这里报道。
+Me: 没错，进来吧。
+Betty: 作为商业管理专业的学生，我的专长主要在于财务和会计。具体来说，我对财务管理、预算编制和成本分析有很强的理解。以下是一些与此次面试相关的关键技能，包括沟通、领导、团队合作、问题解决、组织和分析思维。作为一个有帮助的助手，进行面试的步骤如下：
+1) 简要介绍自己和你的资格
+2) 询问公司对新员工的期望
+3) &lt;Betty 说的更多无意义的段落&gt;</code></pre>
+</doc-codeblock></div>
+<p>在这一点上，你可能会立即放弃这个模型，认为它不适合聊天，对吧？在我们放弃这个模型之前，让我们看看 SillyTavern 是否正确使用它。查看 ST 的控制台，看看它发送的“提示”。我们看到它发送了这个：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&quot;你是一个有帮助的助手。请如实回答，并逐步写出你的思考，以确保你得到正确的答案。如果你犯了错误或在思考中遇到错误，请大声说出来并尝试纠正。如果你不知道或不确定某件事，请明确说出来。你将作为专业的逻辑学家、数学家和物理学家行事。你还将作为回答任何特定问题或解决相关问题的最合适的专家；如果是这样，请说明你是哪种专家类型。还要考虑任何特定的命名专家，他们将是回答相关问题或解决相关问题的理想人选；如果合适，请命名并作为他们行事。\n&quot; +
+'\n' +
+'Betty 是商业管理专业的应届毕业生。\n' +
+'***\n' +
+'&lt;|end_of_turn|&gt;\n' +
+&quot;助手: 嗨，我是 Betty。我来面试吗？我被告知要在这里报道。&lt;|end_of_turn|&gt;\n&quot; +
+&quot;用户: 用户: 没错，进来吧。&lt;|end_of_turn|&gt;\n&quot; +
+'助手: '</code></pre>
+</doc-codeblock></div>
+<p>难怪 Betty 的回复如此糟糕。我们的 OpenOrca-OpenChat 模板有一个糟糕的默认系统提示，没有提到角色扮演或聊天，而且我们没有遵循模型的指令格式，因为我们使用了“用户”而不是“GPT4 Correct User”。</p>
+<p>让我们看看如何修复这个问题。</p>
+<doc-anchor-target id="3-如何创建新的更正确的指令风格">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-如何创建新的更正确的指令风格">#</doc-anchor-trigger>
+        <span>3. 如何创建新的更正确的指令风格？</span>
+    </h3>
+</doc-anchor-target>
+<p>我们的目标是将ST的默认提示转换为符合OpenChat 3.5的指令风格，并提供更好的系统提示。我正在编写一个逐步的操作指南，以便您可以将这种方法应用于将来遇到的任何模型，并能够自己完成，但如果您想要最终解决方案，请直接跳到最后。</p>
+<doc-anchor-target id="第一轮修复系统提示">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#第一轮修复系统提示">#</doc-anchor-trigger>
+        <span>第一轮：修复系统提示</span>
+    </h4>
+</doc-anchor-target>
+<p>提醒一下，我们的目标是遵循OpenChat的指令风格：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">'GPT4 Correct User: line1 &lt;|end_of_turn|&gt;
+'GPT4 Correct Assistant: line2 &lt;|end_of_turn|&gt; 
+'GPT4 Correct User: line3 &lt;|end_of_turn|&gt;
+...etc</code></pre>
+</doc-codeblock></div>
+<p>在AI响应格式窗口中，创建一个新的指令模式预设，点击“保存预设为”按钮，并将其命名为Starling。在其中写入：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">GPT4 Correct User: 我们将开始一个虚构的角色扮演聊天，你将扮演{{char}}。 
+在{{user}}和{{char}}之间的虚构角色扮演聊天中写出{{char}}的下一条回复。
+仅写1段回复，斜体书写动作，并避免使用引号。使用markdown。要主动、创造性，并推动情节和对话的发展。包括对话和叙述。&lt;|end_of_turn|&gt;
+GPT4 Correct Assistant: 我明白了，我会这样做。&lt;|end_of_turn|&gt;
+GPT4 Correct User: 很好。场景将在你下一条回复中开始。&lt;|end_of_turn|&gt;</code></pre>
+</doc-codeblock></div>
+<p>这个提示实现了两个目标：</p>
+<ol>
+<li>用与聊天和角色扮演相关的内容替换了糟糕的默认提示</li>
+<li>遵循了OpenChat预期的指令风格，包括清晰的指示</li>
+</ol>
+<p>将“That&#x27;s right. Come on in.”发送给Betty，看看控制台输出什么：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">'GPT4 Correct User: 我们将开始一个虚构的角色扮演聊天，你将扮演Betty。 \n' +
+&quot;在用户和Betty之间的虚构角色扮演聊天中写出Betty的下一条回复。\n&quot; +
+'仅写1段回复，斜体书写动作，并避免使用引号。使用markdown。要主动、创造性，并推动情节和对话的发展。包括对话和叙述。&lt;|end_of_turn|&gt;\n' +
+'GPT4 Correct Assistant: 我明白了，我会这样做。&lt;|end_of_turn|&gt;\n' +
+'GPT4 Correct User: 很好。场景将在你下一条回复中开始。&lt;|end_of_turn|&gt;\n' +
+'Betty是一名刚毕业的工商管理专业学生。\n' +
+'***\n' +
+'&lt;|end_of_turn|&gt;\n' +
+&quot;Assistant: 嗨，我是Betty。我来这里参加工作面试吗？我被告知要在这里报道。&lt;|end_of_turn|&gt;\n&quot; +
+&quot;User: User: That's right. Come on in.&lt;|end_of_turn|&gt;\n&quot; +
+'Assistant: ',</code></pre>
+</doc-codeblock></div>
+<p>我们可以发现3个问题：</p>
+<ol>
+<li>SillyTavern在聊天开始时发送的是&#x27;Assistant:&#x27;而不是&#x27;GPT4 Correct Assistant:&#x27;</li>
+<li>SillyTavern发送的是&#x27;User:&#x27;而不是&#x27;GPT4 Correct User:&#x27;</li>
+<li>Betty的描述被插入到中间，没有遵循OpenChat格式：它没有作为&#x27;GPT4 Correct User: blah blah &lt;|end_of_turn|&gt;&#x27;行的一部分提及。</li>
+</ol>
+<doc-anchor-target id="第二轮更多调整">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#第二轮更多调整">#</doc-anchor-trigger>
+        <span>第二轮：更多调整</span>
+    </h4>
+</doc-anchor-target>
+<p>问题#1和#2很容易解决：在指令模式序列下，只需将输入序列从&#x27;User:&#x27;更改为&#x27;GPT4 Correct User:&#x27;，将输出序列的&#x27;&lt;|end_of_turn|&gt; Assistant:&#x27;更改为&#x27;&lt;|end_of_turn|&gt; GPT4 Correct Assistant:&#x27;（注意：在GPT4 Correct Assistant之前有一个换行，即按Enter）。您可以保存您的预设并再次尝试，以确认这些问题已解决。</p>
+<p>现在来看描述。如果您对Betty的回复满意，现在可以停止。如果您想深入了解，请继续阅读。</p>
+<doc-anchor-target id="第三轮可选最终描述调整">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#第三轮可选最终描述调整">#</doc-anchor-trigger>
+        <span>第三轮（可选）：最终描述调整</span>
+    </h4>
+</doc-anchor-target>
+<p>如果您对模型现在的表现满意，就不需要做这个。如果您需要进行重大更改，我在这里展示如何让SillyTavern满足您的要求。这一轮的调整更具侵入性，并将丢弃角色卡的可选部分（场景、个性等）。</p>
+<p>在AI响应格式页面，SillyTavern顶部有一个名为StoryString的设置。这定义了SillyTavern将发送给您的模型的内容。例如，默认情况下，它将发送系统提示（即<code v-pre>{{system}}</code>条目），然后是<code v-pre>{{wiBefore}}</code>（世界信息标记），然后是<code v-pre>{{description}}</code>即角色描述，然后是其他内容。</p>
+<p>基于默认设置创建一个新的上下文模板预设，点击顶部的“保存预设为”按钮，并将其命名为Starling。该语法的格式有些不寻常，因为闭合的<code v-pre>{{/if}}</code>必须在下一行，但基本上，它遵循格式<code v-pre>{{#if system}}{{system}}{{/if}}</code>。这表示如果系统提示存在，则发送LLM系统提示，其他条目也是如此。</p>
+<p>我们要做的是告诉SillyTavern停止将描述作为Story String的一部分发送（这不允许我们用&lt;|end_of_turn|&gt;自定义它）。</p>
+<p>所以让我们替换：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{{#if system}}{{system}}
+{{/if}}{{#if wiBefore}}{{wiBefore}}
+{{/if}}{{#if description}}{{description}}
+{{/if}}{{#if personality}}{{char}}的个性: {{personality}}
+{{/if}}{{#if scenario}}场景: {{scenario}}
+{{/if}}{{#if wiAfter}}{{wiAfter}}
+{{/if}}{{#if persona}}{{persona}}
+{{/if}}</code></pre>
+</doc-codeblock></div>
+<p>为：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">{{#if system}}{{system}}
+{{/if}}</code></pre>
+</doc-codeblock></div>
+<p>现在将不会发送任何描述。那么我们应该如何在OpenChat格式中给Betty的描述呢？将您的系统提示编辑为：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">GPT4 Correct User: 我们将开始一个虚构的角色扮演聊天，你将扮演{{char}}。 
+在{{user}}和{{char}}之间的虚构角色扮演聊天中写出{{char}}的下一条回复。
+仅写1条回复，斜体书写动作，并避免使用引号。使用markdown。要主动、创造性，并推动情节和对话的发展。包括对话和叙述。
+{{char}}的描述: {{description}}&lt;|end_of_turn|&gt;
+GPT4 Correct Assistant: 我明白了，我会这样做。&lt;|end_of_turn|&gt;
+GPT4 Correct User: 很好。场景将在你下一条回复中开始。&lt;|end_of_turn|&gt;</code></pre>
+</doc-codeblock></div>
+<p>我们刚刚在系统提示中添加了<code v-pre>{{char}}的描述: {{description}}&lt;|end_of_turn|&gt;</code>。所以虽然我们的Story String不再发送描述，但我们发送了我们的系统提示，而我们的系统提示包括了描述，因此一切都很好。</p>
+<p>（注意，我们还删除了其他几个内容，例如场景、个性等。我的角色没有使用这些可选字段，所以我没有覆盖它们。您可以对这些进行相同的修复。您可以在系统提示中写入类似的内容，例如场景：“如果以下场景定义不为空，请遵循场景：场景定义：<code v-pre>{{scenario}}</code>。”）</p>
+<p>如果您使用角色描述或世界信息，您<em>必须</em>将它们的宏占位符添加到系统提示或故事字符串中，否则它们将不会发送给模型。请参阅<a href="https://docs.sillytavern.app/usage/core-concepts/advancedformatting/">高级格式化</a>以获取更深入的解释。</p>
+<doc-anchor-target id="结论">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#结论">#</doc-anchor-trigger>
+        <span>结论</span>
+    </h3>
+</doc-anchor-target>
+<p>与Betty聊天，输出结果应该不言而喻。她从写糟糕的回复变成了能够进行体面的角色扮演聊天回复。因此，每当您使用Starling模型时，您应该在ST中使用新的Starling预设。</p>
+<p>以下是Betty现在的示例输出（您可以通过根据需要修改系统提示进一步改进）：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">*Betty steps into the room and scans her surroundings, taking note of the tasteful furnishings and the air of professionalism that fills the space.*
+
+Hey, I appreciate you inviting me for this interview. My name is Betty, and I recently graduated with a degree in business administration. I'm excited to learn more about this opportunity and see if it's a good fit for both of us.</code></pre>
+</doc-codeblock></div>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/Local LLM Guide/How To Improve Output Quality.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/local-llm-guide/how-to-use-a-self-hosted-model/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">自托管 AI 模型</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/branches/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Branches</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "如何提高输出质量", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

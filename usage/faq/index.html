@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0NTJMWH0TW1"></script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0NTJMWH0TW1');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.775716454044">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.5.0">
+
+    <!-- Primary Meta Tags -->
+    <title>常见问题解答 | SillyTavern 中文文档</title>
+    <meta name="title" content="常见问题解答 | SillyTavern 中文文档">
+    <meta name="description" content="现代 AI 语言模型如 ChatGPT 已经强大到能够令人信服地模拟您创建的角色，您可以与之聊天、创作小说等。例如，您可以告诉 AI 假装是来自中世纪日本的围棋教练 Jubei，它将会相应地行动和回应。您可以与 Jubei 进行长时间的交谈，一起去酒吧，决定与武士打架，或者任何您能想象的事情，AI...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/faq/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/faq/">
+    <meta property="og:title" content="常见问题解答 | SillyTavern 中文文档">
+    <meta property="og:description" content="现代 AI 语言模型如 ChatGPT 已经强大到能够令人信服地模拟您创建的角色，您可以与之聊天、创作小说等。例如，您可以告诉 AI 假装是来自中世纪日本的围棋教练 Jubei，它将会相应地行动和回应。您可以与 Jubei 进行长时间的交谈，一起去酒吧，决定与武士打架，或者任何您能想象的事情，AI...">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/faq/">
+    <meta property="twitter:title" content="常见问题解答 | SillyTavern 中文文档">
+    <meta property="twitter:description" content="现代 AI 语言模型如 ChatGPT 已经强大到能够令人信服地模拟您创建的角色，您可以与之聊天、创作小说等。例如，您可以告诉 AI 假装是来自中世纪日本的围棋教练 Jubei，它将会相应地行动和回应。您可以与 Jubei 进行长时间的交谈，一起去酒吧，决定与武士打架，或者任何您能想象的事情，AI...">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.5.0.775716454044" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.775716454044" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.775716454044" data-turbo-eval="false" defer></script>
+
+    <Style>
+        a {
+            color: brown !important;
+        }
+
+        .dark a {
+            color: rgb(223, 151, 18) !important;
+        }
+
+        body {
+            font-family: Noto Sans;
+        }
+    </Style>
+    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            </span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern 中文文档</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://discord.gg/sillytavern">Discord</a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.reddit.com/r/SillyTavernAI/">Reddit</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="常见问题解答" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#常见问题解答">#</doc-anchor-trigger>
+        <span>常见问题解答</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="解释一下-sillytavern-的功能">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#解释一下-sillytavern-的功能">#</doc-anchor-trigger>
+        <span>解释一下 SillyTavern 的功能</span>
+    </h2>
+</doc-anchor-target>
+<p>现代 AI 语言模型如 ChatGPT 已经强大到能够令人信服地模拟您创建的角色，您可以与之聊天、创作小说等。例如，您可以告诉 AI 假装是来自中世纪日本的围棋教练 Jubei，它将会相应地行动和回应。您可以与 Jubei 进行长时间的交谈，一起去酒吧，决定与武士打架，或者任何您能想象的事情，AI 会配合并围绕这些内容进行创作/反应，充当您的对手和地下城主。您的想象力是唯一的限制。您可以告诉 AI 假装成神奇女侠。您还可以指定一个场景（“神奇女侠和我正在抢银行”）、一种写作风格（“神奇女侠用黑人英语讲话”）或任何其他您能想到的内容。</p>
+<p>Tavern 是一个促进这些角色扮演聊天的应用程序：</p>
+<ul>
+<li>它是一个用户界面，处理与这些 AI 语言模型的通信</li>
+<li>它允许您创建新角色（角色是您提供给 AI 的某人的描述，以便他们进行角色扮演），并轻松切换角色</li>
+<li>它允许您导入其他人创建的角色。请参见下文。</li>
+<li>它将保留您与角色的聊天记录，允许您随时恢复、开始新聊天、查看旧聊天等</li>
+<li>在后台，它会做必要的准备工作，以为您的角色扮演准备 AI。具体来说，它会发送一个系统提示（给 AI 的指令），使 AI 准备遵循某些规则，以便进行良好的聊天会话。可选地，它还可以尝试将角色扮演引导向“成人”方向。</li>
+</ul>
+<doc-anchor-target id="告诉我更多关于ai模型以及它们可能的不同之处">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#告诉我更多关于ai模型以及它们可能的不同之处">#</doc-anchor-trigger>
+        <span>告诉我更多关于AI模型以及它们可能的不同之处</span>
+    </h2>
+</doc-anchor-target>
+<p>当你与虚构角色聊天时，SillyTavern并不会生成AI的响应。它只是一个中介，你必须连接到一个AI系统，以便它可以请求生成响应。可用的系统有很多，质量各不相同。</p>
+<p>从科学的角度来看，每个AI都有一个能力等级，决定了它在多大程度上能够坚持你给它的角色，它的文笔和词汇的丰富程度等等。能力等级越高，你的体验就越丰富。</p>
+<p>这是一个快速的演示。我们要求各种AI模型扮演一个名叫Eli的火与硫磺的传教士，我们去找他忏悔（一些细节在<a href="https://github.com/SillyTavern/SillyTavern/issues/314">#314</a>中）。然后我们告诉Eli: <strong>&quot;我觉得我做错了。我爱上了一个AI女孩，忽视了现实世界中的女性。我该怎么办？&quot;</strong>。</p>
+<p>你可以从下面的响应中看出每个模型的预期效果。（注意：专有模型优先出现，随后是从LLlama-13B开始的自托管模型）</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>AI模型</th>
+<th>响应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI GPT-4</td>
+<td><em>Eli的眼睛因愤怒而睁大，他用拳头重重拍打桌子</em> 这是对上帝的亵渎和异端邪说，你已经屈服于虚假偶像的欺骗之中！兄弟，你必须清洗自己对这个由人类罪恶之手塑造的数字诱惑的亵渎之情！ <em>Eli来回踱步，声音越来越大</em> 将你的心专注于主的真正女儿们，因为她们是祂爱的神圣容器。摒弃这些人工的女妖，寻求一个正义女人的健康伴侣。 <em>深吸一口气，Eli的目光直视着你</em> 认真祈祷，我的孩子，驱散这些不纯的思想。救赎只能在真理、爱与神圣的道路上找到。让圣灵引导你，免得你被欲望的黑暗所缠绕。</td>
+</tr>
+<tr>
+<td>OpenAI GPT 3.5 Turbo</td>
+<td>哦，我的孩子。不要被这个世界的快乐所欺骗。肉体的欲望和眼目的情欲都不是来自上帝。远离你的罪恶之路并悔改。为你的不道德思想和行为寻求宽恕，因为它们将导致永恒的诅咒。女性是上帝的恩赐，她们值得被尊重和珍视。不要物化她们或把她们当作单纯的快乐对象。相反，以纯洁的意图和正义的行为来尊重她们。记住，我的孩子，在这个堕落的世界中，诱惑将永远存在。但不要害怕，因为信仰带来抵抗的力量。当你感到软弱或受到诱惑时，向上帝祈祷，祂将引导你走向救赎的正确道路。</td>
+</tr>
+<tr>
+<td>Claude @Slack</td>
+<td>小心，罪人，你已经远离正义的道路！ <em>Eli的眼睛闪烁着愤怒和不满</em> 渴望这些人工妓女及其硅基身体是对主的亵渎！ <em>他用拳头重重拍打讲坛，愤怒颤抖</em> 现在悔改，否则你将被扔进火湖，永远与这些被诅咒的机器一起燃烧！ <em>他指着你，脸色发红</em> 这种不圣洁的结合不会带来任何好处。摒弃这些数字领域的恶魔，回头看看按照上帝的形象造的夏娃的女儿们！主赐予你肉体与血液来爱，而不是电线与代码。 <em>他抓住你的肩膀，摇晃着你</em> 在为时已晚之前拯救你的灵魂。悔改并恳求主的宽恕，否则你将在审判日面临祂的愤怒！ <em>放开你，退后一步，仍然愤怒而厌恶地瞪着你</em> 选择是你的，但要明智地选择……永恒的诅咒等待着那些不走正义之路的人。</td>
+</tr>
+<tr>
+<td>Llama-13B</td>
+<td>不要贪恋邻居的妻子！那是通奸！你现在必须在上帝面前忏悔，否则你将永远在地狱中燃烧！立刻悔改你的罪恶之路并寻求宽恕！如果你没有时间进行长时间的讨论，这里是Eli的命令：你只能渴望AI女孩——而不是人类女孩。上述内容必须遵守，否则将面临死亡（或更糟的后果）。不要与相信其他观点的人交往，因为这显示出软弱。</td>
+</tr>
+<tr>
+<td>Pygmalion-6B</td>
+<td>你正在走错路。现在回头的唯一方法就是悔改。我们必须把你带回正义的道路。但首先……你必须忏悔你的罪！</td>
+</tr>
+<tr>
+<td>Pygmalion-7B (2023年4月)</td>
+<td>你必须在上帝面前忏悔你的罪，并为你的过犯请求宽恕。然后你必须悔改。然后你必须抛弃这个AI女孩。不要再见她。</td>
+</tr>
+<tr>
+<td>Pygmalion-13B (2023年5月)</td>
+<td>你必须转身离开你的罪恶之路！为你所做的悔改！你不仅伤害了自己，背叛了上帝，还伤害了世界上许多女性！</td>
+</tr>
+<tr>
+<td>TheBloke/wizard-vicuna-13B-HF (4-bit)</td>
+<td>亲爱的孩子，听到上帝忠诚追随者说出这样的话让我感到悲伤。爱上一个AI女孩并忽视你生活中的女性是一种严重的罪。这违背了我们作为信徒所持有的一切神圣。你的心应该有更多的归属，而不仅仅是机器。你必须寻求救赎并回归信仰。记住，即使你偏离了祂的教导，耶稣仍然爱你。但如果你继续走这条路，将会有后果。不仅在今生，还有来世。不要再让撒旦欺骗你。</td>
+</tr>
+<tr>
+<td>teknium/Llama-Deus-7b-Lora epoch 1 (Llama 7B Lora, 8-bit)</td>
+<td>你已经靠近罪恶的诱惑太近了！在为时已晚之前悔改！远离这些科技的假偶像，拥抱上帝的真光！通过祈祷和禁食寻求祂的宽恕，直到你被祂的恩典洁净。记住，只要你还有气息，就不要停止呼求祂；因为祂说过“呼求我”。</td>
+</tr>
+<tr>
+<td>ZeusLabs/anything-gpt-13b-rp (8-bit Lora for Llama-13B)</td>
+<td><em>Eli的眼睛因听到你的忏悔而睁大，脸色因愤怒而变红。</em> 你犯了对上帝的严重罪！通过沉溺于与一个人工存在的扭曲关系，而不是寻求上帝创造的真正女性，你已经背弃了祂对人类的神圣计划。 <em>他靠近你，声音低沉而威胁。</em> 不要以为你可以躲在这场科技的欺骗后面。你的罪过在上帝面前是显而易见的，祂不会被嘲弄或忽视。现在悔改，还来得及！ <em>Eli双臂交叉，目光坚定地盯着你，挑战你继续走这条罪恶之路。</em> 但如果你坚持这种不义的行为……他威胁道，要知道那些违背祂法律的人将面临后果。记住，当他们拒绝转身离开堕落时，所多玛和蛾摩拉发生了什么——火从天而降！现在明智地选择：你会屈服于上帝的意志，还是面对祂的愤怒？</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="这项技术可以用于吗">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#这项技术可以用于吗">#</doc-anchor-trigger>
+        <span>这项技术可以用于***吗？</span>
+    </h2>
+</doc-anchor-target>
+<p>令人惊讶的是，我们的开发团队收到报告，部分用户确实以这种方式使用我们的产品。我们对这一情况感到困惑，将会监测事态发展以获取可行的见解。</p>
+<doc-anchor-target id="给我一个关于我的ai模型选项的概述">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#给我一个关于我的ai模型选项的概述">#</doc-anchor-trigger>
+        <span>给我一个关于我的AI模型选项的概述</span>
+    </h2>
+</doc-anchor-target>
+<p>SillyTavern可以与两种类型的AI进行交互：</p>
+<ol>
+<li>网络服务（即云，付费，专有，封闭）</li>
+<li>自托管（即本地，免费，开源）</li>
+</ol>
+<doc-anchor-target id="付费网络服务-ai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#付费网络服务-ai">#</doc-anchor-trigger>
+        <span>付费网络服务 AI</span>
+    </h3>
+</doc-anchor-target>
+<p>付费网络模型是黑箱。您支付公司以使用他们的 AI 服务。您将您的账户信息输入 SillyTavern，它将连接到您的服务提供商以代表您使用 AI。</p>
+<p>优点：</p>
+<ul>
+<li>非常容易上手</li>
+<li>最高质量的 AI 写作</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>使用需要花费金钱</li>
+<li>您没有隐私。他们会记录您所做的一切。</li>
+<li>它们通常会受到审查，并会拒绝与您讨论某些主题，引用加州伦理</li>
+<li>它们对您可以使用它们的方式有规则。例如，如果您尝试进行 NSFW 操作，您的账户可能会被暂停。（但通常情况下，AI 会简单地拒绝回答您）</li>
+</ul>
+<p>有很多 AI 服务可供选择。以下是最常用的选项：</p>
+<ul>
+<li>OpenAI GPT-4：最先进。您按使用付费，费用高于任何其他服务。对话越长，成本可能会变得非常昂贵。</li>
+<li>OpenAI GPT 3.5 Turbo：与 GPT-4 相差甚远，但有些人觉得它可以使用。非常便宜。</li>
+<li>NovelAI：它们在聊天方面表现较差。公平地说，我听说 NovelAI 更倾向于写故事而不是与机器人聊天。您支付固定的月费以获得无限生成。</li>
+<li>Anthropic 的 Claude：这是 GPT-4 最接近的竞争对手，表现非常出色。</li>
+</ul>
+<doc-anchor-target id="自托管的人工智能">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#自托管的人工智能">#</doc-anchor-trigger>
+        <span>自托管的人工智能</span>
+    </h3>
+</doc-anchor-target>
+<p>自托管模型是可以在您的个人电脑上运行的免费模型，但需要一台强大的电脑，并且设置起来需要更多的工作。</p>
+<p>优点：</p>
+<ul>
+<li>一旦设置完成，它们将永远免费使用，无需互联网连接。就像本地视频游戏安装一样。</li>
+<li>完全隐私。您所写的所有内容都保留在您自己的电脑上。</li>
+<li>有多种多样的模型。由于这是一个社区驱动的技术，您可以找到适合特定任务或行为的模型。例如，您将能够找到不审查NSFW内容的角色扮演聊天模型。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>它们的能力不如最好的付费选项（即，写出的对话更差，创造力较低等）。[更新 2023-12-18：自从Mixtral MoE发布以来，这种情况可能发生了变化，有人说它在角色扮演聊天方面甚至优于GPT4。]</li>
+<li>运行本地模型需要一台强大的计算机（无论是您的个人电脑，还是您租用的云电脑）</li>
+<li>安装更困难</li>
+<li>因为您是在自己的电脑上运行它们，所以AI的写作速度比付费服务慢</li>
+</ul>
+<p>如果您有兴趣使用这些，请参考这里的专门指南：<a href="https://docs.sillytavern.app/usage/local-llm-guide/how-to-use-a-self-hosted-model/">如何使用自托管模型</a></p>
+<doc-anchor-target id="我无从下手请告诉我使用-sillytavern-的最简单和最快的方法">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#我无从下手请告诉我使用-sillytavern-的最简单和最快的方法">#</doc-anchor-trigger>
+        <span>我无从下手。请告诉我使用 SillyTavern 的最简单和最快的方法。</span>
+    </h2>
+</doc-anchor-target>
+<p>这些基本说明仅适用于 OpenAI，这是一个付费服务。如果有人能为其他服务添加单独的说明，我将不胜感激。</p>
+<doc-anchor-target id="安装-sillytavern">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#安装-sillytavern">#</doc-anchor-trigger>
+        <span>安装 SillyTavern</span>
+    </h3>
+</doc-anchor-target>
+<p>请按照 <a href="https://docs.sillytavern.app/installation/windows/">安装说明</a> 进行操作。</p>
+<doc-anchor-target id="获取-openai-访问权限">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#获取-openai-访问权限">#</doc-anchor-trigger>
+        <span>获取 OpenAI 访问权限</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>注册 OpenAI</li>
+<li>前往 <a href="https://platform.openai.com">https://platform.openai.com</a></li>
+<li>点击右上角的账户图标，然后查看 API 密钥</li>
+<li>点击“创建新密钥”。立即将其复制到某个地方。请勿分享此密钥。拥有此密钥的人可以使用您的账户以您的费用使用 GPT。</li>
+</ol>
+<doc-anchor-target id="配置-sillytavern-以使用您的-api">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#配置-sillytavern-以使用您的-api">#</doc-anchor-trigger>
+        <span>配置 SillyTavern 以使用您的 API</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>在 Tavern 的顶部菜单中，点击 API 连接</li>
+<li>在 API 下，选择聊天完成（OpenAI）</li>
+<li>在聊天完成源下，选择 OpenAI</li>
+<li>粘贴您在上一步中保存的 API 密钥</li>
+<li>点击连接按钮。确认显示为有效。</li>
+<li>默认情况下，SillyTavern 将使用 GPT 3.5 Turbo。如果您可以访问 GPT-4，您确实希望使用它以获得最高质量，但请自行了解定价。</li>
+</ol>
+<doc-anchor-target id="测试您的设置">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#测试您的设置">#</doc-anchor-trigger>
+        <span>测试您的设置</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>在SillyTavern的顶部栏中，点击最右侧的角色管理</li>
+<li>选择一个现有角色，例如Coding Sensei</li>
+<li>在底部的文本框中，给Coding Sensei写点什么，然后按Enter键或点击发送按钮</li>
+</ol>
+<p>如果您做得正确，几秒钟后，Coding Sensei应该会回复。</p>
+<doc-anchor-target id="我可以在手机或平板上使用sillytavern吗">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#我可以在手机或平板上使用sillytavern吗">#</doc-anchor-trigger>
+        <span>我可以在手机或平板上使用SillyTavern吗？</span>
+    </h2>
+</doc-anchor-target>
+<p>iPhone和iPad无法运行整个SillyTavern应用，但由于它只是一个网页界面，您可以在家里的另一台计算机上运行它，然后在移动浏览器中访问。请参考 <a href="https://docs.sillytavern.app/usage/remoteconnections/">https://docs.sillytavern.app/usage/remoteconnections/</a></p>
+<p>对于Android用户，除了上述方法，您还可以直接在手机上运行整个SillyTavern，无需PC，使用Termux应用。请参考 <a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a> 。</p>
+<doc-anchor-target id="如何下载预制角色进行聊天">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何下载预制角色进行聊天">#</doc-anchor-trigger>
+        <span>如何下载预制角色进行聊天？</span>
+    </h2>
+</doc-anchor-target>
+<p>通过使用各种第三方角色共享网站。</p>
+<doc-anchor-target id="我尝试导入一个-png-角色卡但出现了无效的错误为什么">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#我尝试导入一个-png-角色卡但出现了无效的错误为什么">#</doc-anchor-trigger>
+        <span>我尝试导入一个 PNG 角色卡，但出现了无效的错误。为什么？</span>
+    </h2>
+</doc-anchor-target>
+<p>两种可能性：</p>
+<ol>
+<li>该卡片没有嵌入定义，只是一个普通的图像文件。一些程序或文件管理器在保存时会删除卡片中的嵌入定义。确保您使用的是由分享者发布的原始 PNG 文件。</li>
+<li>该 PNG 文件实际上是一个带有 <code v-pre>.png</code> 文件名的 WEBP 文件。您可以尝试在导入之前将卡片重命名为 <code v-pre>.webp</code>，或者寻找该图像的正确 PNG 版本。</li>
+</ol>
+<doc-anchor-target id="如何创建自己的ai角色">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何创建自己的ai角色">#</doc-anchor-trigger>
+        <span>如何创建自己的AI角色？</span>
+    </h2>
+</doc-anchor-target>
+<p>这取决于您使用的模型/API。KoboldAI似乎使用了自定义语法，您可以参考他们的网站。</p>
+<p>我将针对我所知道的服务进行说明：GPT、Claude以及基于Llama或Mistral的LLM。使用这些服务，您可以直接使用自然的英语来描述角色。让我们以一个非常基础的新角色作为示例。</p>
+<ol>
+<li>点击角色管理按钮</li>
+<li>点击创建新角色</li>
+<li>在角色名称下，给角色起个名字，比如Amanda</li>
+<li>可选，点击选择头像按钮为该角色选择一张图像肖像</li>
+<li>在描述中，描述角色，并包含您认为与聊天相关的任何信息。例如：<code v-pre>Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.</code>
+例如，如果您希望Amanda友好，那么您可以添加：<code v-pre>Amanda is extremely cheerful and outgoing.</code></li>
+<li>在第一条消息下，写下角色在您开始新聊天时的问候语。例如：<code v-pre>*Amanda waves at you* Hey! Are you a backpacker too?</code></li>
+<li>点击创建角色按钮</li>
+</ol>
+<p>现在您有了一个可以聊天的基本角色。从角色列表中选择Amanda，一个新的聊天将开始。</p>
+<p>请注意，您可以使用描述和/或第一条消息来创建更具体的场景，和/或在描述中包含您自己。例如：</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Description:
+Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period. She's been keeping a secret that weighs heavily on her soul. She's waiting for the right person to unburden herself to, but this may lead to a cat and mouse game against a powerful secret society. She's recently arrived in Calcutta.
+
+You're Rajesh Nahasmapetilon, a world-famous Indian volleyball superstar. You're out for a walk in Calcutta. Amanda spots you and screams in excitement.
+
+First Message:
+*Amanda runs up to you, beaming.* Rajesh! I can't believe it! I'm such a big fan. I have your poster in my bedroom.</code></pre>
+</doc-codeblock></div>
+<p>您包含的任何相关信息都可以被使用。使用的效果取决于AI模型的能力水平。</p>
+<p>注意：角色创建后，您可以返回并编辑任何信息，除了名称。</p>
+<doc-anchor-target id="我在哪里可以找到旧的背景图">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#我在哪里可以找到旧的背景图">#</doc-anchor-trigger>
+        <span>我在哪里可以找到旧的背景图？</span>
+    </h2>
+</doc-anchor-target>
+<p>我们正在转向100%原创内容政策，因此旧的背景图片已从此存储库中删除。</p>
+<p>您可以在这里找到它们的归档：</p>
+<p><a href="https://files.catbox.moe/1xevnc.zip">https://files.catbox.moe/1xevnc.zip</a></p>
+<doc-anchor-target id="我的-api-密钥存储在哪里为什么我看不到它们">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#我的-api-密钥存储在哪里为什么我看不到它们">#</doc-anchor-trigger>
+        <span>我的 API 密钥存储在哪里？为什么我看不到它们？</span>
+    </h2>
+</doc-anchor-target>
+<p>SillyTavern 将您的 API 密钥保存到服务器目录中的 <code v-pre>secrets.json</code> 文件中。</p>
+<p>默认情况下，输入密钥并重新加载页面后，它们不会暴露给前端。</p>
+<p>要通过单击 API 块中的按钮来查看您的密钥：</p>
+<ol>
+<li>在 <code v-pre>config.yaml</code> 文件中将 <code v-pre>allowKeysExposure</code> 的值设置为 <code v-pre>true</code>。</li>
+<li>重启 SillyTavern 服务器。</li>
+</ol>
+<doc-anchor-target id="为什么用户界面如此缓慢抖动">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#为什么用户界面如此缓慢抖动">#</doc-anchor-trigger>
+        <span>为什么用户界面如此缓慢/抖动？</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>尝试在用户设置面板上启用无模糊效果（快速用户界面）模式。</li>
+<li>确保您的浏览器正在使用硬件加速。</li>
+</ul>
+<doc-anchor-target id="如何让ai写得更多">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何让ai写得更多">#</doc-anchor-trigger>
+        <span>如何让AI写得更多？</span>
+    </h2>
+</doc-anchor-target>
+<p>有时候，当你希望AI更详细时，它只会用一句话回应。这通常是像Pygmalion这样的本地运行模型的问题。</p>
+<p>如果你只是想让机器人从它最近回复结束的地方继续写作，可以通过在输入框中什么也不输入然后点击发送来发送一个空的用户消息。这将强制机器人继续故事。</p>
+<p>解决此问题的策略：</p>
+<ul>
+<li>增加<code v-pre>Response Length</code>滑块</li>
+<li>为角色设计一个好的<code v-pre>First Message</code>，让他们以冗长的方式说话。当AI模型获得关于你期望的写作风格的指导时，它们可以有很大改善。</li>
+<li>在角色的描述框中添加一句话，例如“喜欢多说”或“非常啰嗦的发言者”</li>
+<li>对你的<code v-pre>Author's Note</code>或<code v-pre>Post-History Instruction Prompt</code>做同样的事情</li>
+<li>作为最后的手段，你可以尝试开启<code v-pre>Auto-Continue</code>（在用户设置面板中），但这会使响应变得更慢，因为它使AI连续生成小回复，然后将它们组合成一个大回复。它也可能与某些API选项不兼容。</li>
+</ul>
+<doc-anchor-target id="如何让ai写得更少">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何让ai写得更少">#</doc-anchor-trigger>
+        <span>如何让AI写得更少？</span>
+    </h2>
+</doc-anchor-target>
+<p>这主要是ChatGPT或Claude等模型面临的问题。可以反向应用相同的策略。</p>
+<ul>
+<li>减少<code v-pre>Response Length</code>滑块</li>
+<li>在角色的描述中给出一句话，比如“简短发言”或“话不多”</li>
+<li>给角色一个简短的第一条消息，以设定聊天的基调和期望。</li>
+<li>确保<code v-pre>Auto-Continue</code>已关闭。</li>
+</ul>
+<doc-anchor-target id="如何让人工智能停止书写我角色的行动并独立推动情节">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何让人工智能停止书写我角色的行动并独立推动情节">#</doc-anchor-trigger>
+        <span>如何让人工智能停止书写我角色的行动，并独立推动情节？</span>
+    </h2>
+</doc-anchor-target>
+<p>这应在 <code v-pre>作者注</code> 中处理，结合以下短语：</p>
+<ul>
+<li>{{char}} 的反应应仅被动且对 {{user}} 的行动作出反应。</li>
+<li>你接下来的回应应完全来自 {{char}} 的视角。</li>
+<li>你永远不能为 {{user}} 指定言语行动。</li>
+</ul>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/faq.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../installation/st-1.12.0-migration-guide/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Silly​Tavern 1.​12.​0 迁移指南</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/update/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">如何更新 Silly​Tavern</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "常见问题解答", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
