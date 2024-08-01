@@ -1,4 +1,4 @@
-# 什么是 SillyTavern？
+# 什么是 SillyTavern?
 
 ![SillyTavern - LLM 前端供高级用户使用](/static/banner.jpg)
 
