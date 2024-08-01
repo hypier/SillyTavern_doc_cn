@@ -59,8 +59,6 @@ SillyTavern 支持扩展/插件：
 
 可以通过使用 [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-extras) 添加额外功能。 
 
-``` 
-```
 
 ### 截图
 

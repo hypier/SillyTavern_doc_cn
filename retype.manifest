@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-08-01T02:58:11Z",
+  "created": "2024-08-01T03:20:53Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -346,6 +346,9 @@
     },
     {
       "path": "static/scripts/st-debugger.png"
+    },
+    {
+      "path": "static/stylesheet.css"
     },
     {
       "path": "static/tabby-assets.png"
