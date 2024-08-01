@@ -1,0 +1,501 @@
+{
+  "version": "3.5.0",
+  "created": "2024-08-01T02:58:11Z",
+  "files": [
+    {
+      "path": ".nojekyll"
+    },
+    {
+      "path": "404.html"
+    },
+    {
+      "path": "CNAME"
+    },
+    {
+      "path": "extensions/alltalk/index.html"
+    },
+    {
+      "path": "extensions/blip/index.html"
+    },
+    {
+      "path": "extensions/dynamic-audio/index.html"
+    },
+    {
+      "path": "extensions/emulatorjs/index.html"
+    },
+    {
+      "path": "extensions/expression-images/index.html"
+    },
+    {
+      "path": "extensions/extras/installation/common-problems/index.html"
+    },
+    {
+      "path": "extensions/extras/installation/index.html"
+    },
+    {
+      "path": "extensions/extras/running-extras-in-colab/index.html"
+    },
+    {
+      "path": "extensions/live2d/index.html"
+    },
+    {
+      "path": "extensions/objective/index.html"
+    },
+    {
+      "path": "extensions/rvc/index.html"
+    },
+    {
+      "path": "extensions/smart-context/index.html"
+    },
+    {
+      "path": "extensions/speech-recognition/index.html"
+    },
+    {
+      "path": "extensions/stable-diffusion/index.html"
+    },
+    {
+      "path": "extensions/summarize/index.html"
+    },
+    {
+      "path": "extensions/talkinghead/index.html"
+    },
+    {
+      "path": "extensions/tts/index.html"
+    },
+    {
+      "path": "extensions/vrm/index.html"
+    },
+    {
+      "path": "extensions/websearch/index.html"
+    },
+    {
+      "path": "extensions/xtts/index.html"
+    },
+    {
+      "path": "favicon.ico"
+    },
+    {
+      "path": "for-contributors/function-calling/index.html"
+    },
+    {
+      "path": "for-contributors/server-plugins/index.html"
+    },
+    {
+      "path": "for-contributors/writing-extensions/index.html"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "installation/android-(termux)/index.html"
+    },
+    {
+      "path": "installation/docker/index.html"
+    },
+    {
+      "path": "installation/linuxmacos/index.html"
+    },
+    {
+      "path": "installation/st-1.12.0-migration-guide/index.html"
+    },
+    {
+      "path": "installation/windows/index.html"
+    },
+    {
+      "path": "licensecredits/index.html"
+    },
+    {
+      "path": "resources/css/retype.css"
+    },
+    {
+      "path": "resources/fonts/Inter-italic-latin-var.woff2"
+    },
+    {
+      "path": "resources/fonts/Inter-roman-latin-var.woff2"
+    },
+    {
+      "path": "resources/js/config.js"
+    },
+    {
+      "path": "resources/js/lunr.js"
+    },
+    {
+      "path": "resources/js/prism.js"
+    },
+    {
+      "path": "resources/js/retype.js"
+    },
+    {
+      "path": "resources/js/search.json"
+    },
+    {
+      "path": "resources/lunr.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/mermaid.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/prism.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/retype.js.LICENSE.txt"
+    },
+    {
+      "path": "resources/retype.LICENSE.txt"
+    },
+    {
+      "path": "robots.txt"
+    },
+    {
+      "path": "sitemap.xml.gz"
+    },
+    {
+      "path": "static/banner.jpg"
+    },
+    {
+      "path": "static/cfg-diagram.png"
+    },
+    {
+      "path": "static/cfg-groups.png"
+    },
+    {
+      "path": "static/cfg-hamburger.png"
+    },
+    {
+      "path": "static/cfg-panel.png"
+    },
+    {
+      "path": "static/dreamgen/cards/laralightland.png"
+    },
+    {
+      "path": "static/dreamgen/cards/seraphina.png"
+    },
+    {
+      "path": "static/dreamgen/dreamgen_api_keys_copy.jpg"
+    },
+    {
+      "path": "static/dreamgen/dreamgen_api_keys_new.jpg"
+    },
+    {
+      "path": "static/dreamgen/dreamgen_st_connection.jpg"
+    },
+    {
+      "path": "static/dreamgen/dreamgen_st_context_settings.jpg"
+    },
+    {
+      "path": "static/dreamgen/dreamgen_st_instruct_settings.jpg"
+    },
+    {
+      "path": "static/eris.png"
+    },
+    {
+      "path": "static/extensions/expression-default.png"
+    },
+    {
+      "path": "static/extensions/expression-drawer.png"
+    },
+    {
+      "path": "static/extensions/live2d-animations.png"
+    },
+    {
+      "path": "static/extensions/live2d-classify.png"
+    },
+    {
+      "path": "static/extensions/live2d-folder.png"
+    },
+    {
+      "path": "static/extensions/live2d-global.png"
+    },
+    {
+      "path": "static/extensions/live2d-list.png"
+    },
+    {
+      "path": "static/extensions/live2d-mapping.png"
+    },
+    {
+      "path": "static/extensions/live2d-model.png"
+    },
+    {
+      "path": "static/extensions/live2d-settings.png"
+    },
+    {
+      "path": "static/extensions/live2d-talk.png"
+    },
+    {
+      "path": "static/extensions/menu-icon.png"
+    },
+    {
+      "path": "static/extensions/note-menu.png"
+    },
+    {
+      "path": "static/extensions/note-panel.png"
+    },
+    {
+      "path": "static/extensions/objective-panel.png"
+    },
+    {
+      "path": "static/extensions/sd-user.png"
+    },
+    {
+      "path": "static/extensions/smart-context.png"
+    },
+    {
+      "path": "static/extensions/summarize.png"
+    },
+    {
+      "path": "static/extensions/task-check.png"
+    },
+    {
+      "path": "static/extensions/vrm-classify.png"
+    },
+    {
+      "path": "static/extensions/vrm-global.png"
+    },
+    {
+      "path": "static/extensions/vrm-hitboxes.png"
+    },
+    {
+      "path": "static/extensions/vrm-model.png"
+    },
+    {
+      "path": "static/extensions/vrm-scene.png"
+    },
+    {
+      "path": "static/horde-config.png"
+    },
+    {
+      "path": "static/horde-worker.png"
+    },
+    {
+      "path": "static/input_spec.png"
+    },
+    {
+      "path": "static/koboldcpp.png"
+    },
+    {
+      "path": "static/logo.png"
+    },
+    {
+      "path": "static/mancer-dashboard.png"
+    },
+    {
+      "path": "static/mancer-key.png"
+    },
+    {
+      "path": "static/nai-key.png"
+    },
+    {
+      "path": "static/nai-stream.png"
+    },
+    {
+      "path": "static/novel-account.png"
+    },
+    {
+      "path": "static/novel-side.png"
+    },
+    {
+      "path": "static/novel-token.png"
+    },
+    {
+      "path": "static/novel-user.png"
+    },
+    {
+      "path": "static/openrouter-connection.png"
+    },
+    {
+      "path": "static/screenshot1.jpg"
+    },
+    {
+      "path": "static/screenshot2.jpg"
+    },
+    {
+      "path": "static/screenshot3.jpg"
+    },
+    {
+      "path": "static/screenshot4.jpg"
+    },
+    {
+      "path": "static/screenshot5.jpg"
+    },
+    {
+      "path": "static/screenshot6.jpg"
+    },
+    {
+      "path": "static/screenshot7.jpg"
+    },
+    {
+      "path": "static/screenshot8.jpg"
+    },
+    {
+      "path": "static/scripts/autoexecute.png"
+    },
+    {
+      "path": "static/scripts/cthulhu-says.png"
+    },
+    {
+      "path": "static/scripts/hello-world.png"
+    },
+    {
+      "path": "static/scripts/quick-reply.png"
+    },
+    {
+      "path": "static/scripts/slim-input.png"
+    },
+    {
+      "path": "static/scripts/slim-output.png"
+    },
+    {
+      "path": "static/scripts/st-debugger.png"
+    },
+    {
+      "path": "static/tabby-assets.png"
+    },
+    {
+      "path": "static/tabby-config.png"
+    },
+    {
+      "path": "static/tabby-loader.png"
+    },
+    {
+      "path": "static/tabby-terminal.png"
+    },
+    {
+      "path": "static/valka.png"
+    },
+    {
+      "path": "static/windows-1.png"
+    },
+    {
+      "path": "static/windows-2.png"
+    },
+    {
+      "path": "static/windows-3.png"
+    },
+    {
+      "path": "static/windows-4.png"
+    },
+    {
+      "path": "tags/附件/index.html"
+    },
+    {
+      "path": "tags/检索增强生成/index.html"
+    },
+    {
+      "path": "tags/文档/index.html"
+    },
+    {
+      "path": "tags/文件/index.html"
+    },
+    {
+      "path": "tags/向量/index.html"
+    },
+    {
+      "path": "tags/向量存储/index.html"
+    },
+    {
+      "path": "tags/index.html"
+    },
+    {
+      "path": "tags/rag/index.html"
+    },
+    {
+      "path": "usage/api-connections/dreamgen/index.html"
+    },
+    {
+      "path": "usage/api-connections/horde/index.html"
+    },
+    {
+      "path": "usage/api-connections/index.html"
+    },
+    {
+      "path": "usage/api-connections/koboldai/index.html"
+    },
+    {
+      "path": "usage/api-connections/koboldcpp/index.html"
+    },
+    {
+      "path": "usage/api-connections/mancer/index.html"
+    },
+    {
+      "path": "usage/api-connections/novelai/index.html"
+    },
+    {
+      "path": "usage/api-connections/openai/index.html"
+    },
+    {
+      "path": "usage/api-connections/openrouter/index.html"
+    },
+    {
+      "path": "usage/api-connections/scale/index.html"
+    },
+    {
+      "path": "usage/api-connections/tabbyapi/index.html"
+    },
+    {
+      "path": "usage/branches/index.html"
+    },
+    {
+      "path": "usage/common-settings/index.html"
+    },
+    {
+      "path": "usage/core-concepts/advancedformatting/index.html"
+    },
+    {
+      "path": "usage/core-concepts/authors-note/index.html"
+    },
+    {
+      "path": "usage/core-concepts/cfg/index.html"
+    },
+    {
+      "path": "usage/core-concepts/characterdesign/index.html"
+    },
+    {
+      "path": "usage/core-concepts/chatfilemanagement/index.html"
+    },
+    {
+      "path": "usage/core-concepts/data-bank/index.html"
+    },
+    {
+      "path": "usage/core-concepts/groupchats/index.html"
+    },
+    {
+      "path": "usage/core-concepts/instructmode/index.html"
+    },
+    {
+      "path": "usage/core-concepts/personas/index.html"
+    },
+    {
+      "path": "usage/core-concepts/slashcommands/index.html"
+    },
+    {
+      "path": "usage/core-concepts/uicustomization/index.html"
+    },
+    {
+      "path": "usage/core-concepts/worldinfo/index.html"
+    },
+    {
+      "path": "usage/faq/index.html"
+    },
+    {
+      "path": "usage/hotkeys/index.html"
+    },
+    {
+      "path": "usage/local-llm-guide/how-to-improve-output-quality/index.html"
+    },
+    {
+      "path": "usage/local-llm-guide/how-to-use-a-self-hosted-model/index.html"
+    },
+    {
+      "path": "usage/remoteconnections/index.html"
+    },
+    {
+      "path": "usage/st-reverse-proxy-guide/index.html"
+    },
+    {
+      "path": "usage/st-script/index.html"
+    },
+    {
+      "path": "usage/update/index.html"
+    }
+  ]
+}

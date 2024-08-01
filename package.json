@@ -1,0 +1,10 @@
+{
+  "name": "st-docs",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "retype build"
+  },
+  "dependencies": {
+    "retypeapp": "^3.5.0"
+  }
+}
